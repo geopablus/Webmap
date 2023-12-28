@@ -1,0 +1,18 @@
+#map {
+    width: 100%;
+    height: 98vh; /* Altura completa de la ventana */
+}
+
+#sidebar {
+    position: absolute; /* Posición absoluta para superponer sobre el mapa */
+    bottom: 10px; /* Ajusta según sea necesario */
+    left: 10px; /* Ajusta según sea necesario */
+    width: 200px; /* Ajusta el ancho según tus necesidades */
+    max-height: 100vh; /* Ajusta la altura máxima según tus necesidades */
+    background-color: rgba(255, 255, 255, 0.7); /* Blanco semitransparente */
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Sombra opcional para mejor visibilidad */
+    overflow-y: auto; /* Desplazamiento si el contenido es largo */
+    z-index: 1000; /* Asegura que esté por encima del mapa */
+    color: black; /* Color del texto */
+}
