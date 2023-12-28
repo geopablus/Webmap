@@ -24,7 +24,7 @@ function onEachFeature(feature, layer) {
 }
 
 // Ruta al archivo GeoJSON
-var geojsonURL = 'https://www.dropbox.com/scl/fi/z580hs82g6awtk9dihnuy/New_csv_puntos.geojson?rlkey=z4hbcs5d8tr9z3thwkkguhrqi&dl=0';
+var geojsonURL = 'layer/New_csv_puntos.geojson';
 
 // Cargar y añadir el GeoJSON al mapa
 fetch(geojsonURL)
