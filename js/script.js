@@ -24,7 +24,7 @@ function onEachFeature(feature, layer) {
 }
 
 // Ruta al archivo GeoJSON
-var geojsonURL = 'layer/New_csv_puntos.geojson';
+var geojsonURL = 'layers/New_csv_puntos.geojson';
 
 // Cargar y añadir el GeoJSON al mapa
 fetch(geojsonURL)
