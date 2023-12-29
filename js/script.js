@@ -20,15 +20,24 @@ function onEachFeature(feature, layer) {
     layer.on('click', function () {
         var sidebarContent = document.getElementById('sidebar'); // Iniciamos la barra lateral
         var content = ''; // Iniciamos el contenido de la barra lateral como una cadena vacía
+
         if (feature.properties) { // Iterar sobre cada propiedad en el elemento del GeoJSON
             for (var key in feature.properties) {
-                var value = feature.properties[key] ? feature.properties[key] : '<i>---</i>'; // Verificar si hay valor y usar '---' en cursiva si no hay
-                content += '<strong>' + key + ':</strong> ' + value + '<br>'; // Agregar el nombre del campo y su valor al contenido
+                if (key === 'imageUrl') { // Verificar si el campo actual es 'imageUrl'
+                    var imageUrl = feature.properties[key]; // Si hay una URL válida, mostrar la imagen
+                    if (imageUrl) {
+                        content += '<img src="' + imageUrl + '" alt="Imagen" style="max-width: 100%;"><br>';
+                    }
+                } else {
+                    var value = feature.properties[key] ? feature.properties[key] : '<i>---</i>'; // Para otros campos, mostrar el valor o '---' si está vacío
+                    content += '<strong>' + key + ':</strong> ' + value + '<br>';
+                }
             }
         }
         sidebarContent.innerHTML = content; // Actualizar la barra lateral con el nuevo contenido
     });
 }
+
 
 
 // Ruta al archivo GeoJSON

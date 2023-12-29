@@ -3,14 +3,14 @@
 "name": "New_csv_puntos",
 "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
 "features": [
-{ "type": "Feature", "properties": { "Mes": "Noviembre", "Fecha": "04/11/2021", "Vector": "RATAS", "RepeInt": "", "Madrigueras": "si" }, "geometry": { "type": "Point", "coordinates": [ -3.735239857072099, 40.381491288295841 ] } },
-{ "type": "Feature", "properties": { "Mes": "Noviembre", "Fecha": "11/11/2021", "Vector": "CUCARACHAS", "RepeInt": "Interno", "Madrigueras": "" }, "geometry": { "type": "Point", "coordinates": [ -3.739181023416469, 40.371760853772976 ] } },
-{ "type": "Feature", "properties": { "Mes": "Noviembre", "Fecha": "11/11/2021", "Vector": "RATAS", "RepeInt": "Otros", "Madrigueras": "" }, "geometry": { "type": "Point", "coordinates": [ -3.716339370160008, 40.376297542825782 ] } },
-{ "type": "Feature", "properties": { "Mes": "Noviembre", "Fecha": "15/11/2021", "Vector": "CUCARACHAS", "RepeInt": "Interno", "Madrigueras": "" }, "geometry": { "type": "Point", "coordinates": [ -3.750889523240032, 40.369525281490894 ] } },
-{ "type": "Feature", "properties": { "Mes": "Noviembre", "Fecha": "19/11/2021", "Vector": "RATAS", "RepeInt": "", "Madrigueras": "" }, "geometry": { "type": "Point", "coordinates": [ -3.750716853745816, 40.380614970906855 ] } },
-{ "type": "Feature", "properties": { "Mes": "Noviembre", "Fecha": "22/11/2021", "Vector": "RATAS", "RepeInt": "", "Madrigueras": "" }, "geometry": { "type": "Point", "coordinates": [ -3.72911236725667, 40.371848514650836 ] } },
-{ "type": "Feature", "properties": { "Mes": "Noviembre", "Fecha": "23/11/2021", "Vector": "RATA", "RepeInt": "", "Madrigueras": "si" }, "geometry": { "type": "Point", "coordinates": [ -3.72753006811344, 40.38142550586705 ] } },
-{ "type": "Feature", "properties": { "Mes": "Diciembre", "Fecha": "14/12/2021", "Vector": "RATAS", "RepeInt": "", "Madrigueras": "" }, "geometry": { "type": "Point", "coordinates": [ -3.74297837786684, 40.375815373405253 ] } },
-{ "type": "Feature", "properties": { "Mes": "Diciembre", "Fecha": "14/12/2021", "Vector": "RATAS", "RepeInt": "", "Madrigueras": "" }, "geometry": { "type": "Point", "coordinates": [ -3.732478151277759, 40.378401367645964 ] } }
+{ "type": "Feature", "properties": { "Mes": "Noviembre", "Fecha": "04/11/2021", "Vector": "RATAS", "RepeInt": "", "Madrigueras": "si", "imageUrl": "images/1.jpg" }, "geometry": { "type": "Point", "coordinates": [ -3.735239857072099, 40.381491288295841 ] } },
+{ "type": "Feature", "properties": { "Mes": "Noviembre", "Fecha": "11/11/2021", "Vector": "CUCARACHAS", "RepeInt": "Interno", "Madrigueras": "", "imageUrl": "images/2.jpg" }, "geometry": { "type": "Point", "coordinates": [ -3.739181023416469, 40.371760853772976 ] } },
+{ "type": "Feature", "properties": { "Mes": "Noviembre", "Fecha": "11/10/2021", "Vector": "RATAS", "RepeInt": "Otros", "Madrigueras": "", "imageUrl": "images/3.jpg" }, "geometry": { "type": "Point", "coordinates": [ -3.716339370160008, 40.376297542825782 ] } },
+{ "type": "Feature", "properties": { "Mes": "Noviembre", "Fecha": "15/11/2021", "Vector": "CUCARACHAS", "RepeInt": "Interno", "Madrigueras": "", "imageUrl": "images/4.jpg" }, "geometry": { "type": "Point", "coordinates": [ -3.750889523240032, 40.369525281490894 ] } },
+{ "type": "Feature", "properties": { "Mes": "Noviembre", "Fecha": "19/11/2021", "Vector": "RATAS", "RepeInt": "", "Madrigueras": "", "imageUrl": "images/5.jpg" }, "geometry": { "type": "Point", "coordinates": [ -3.750716853745816, 40.380614970906855 ] } },
+{ "type": "Feature", "properties": { "Mes": "Noviembre", "Fecha": "22/11/2021", "Vector": "RATAS", "RepeInt": "", "Madrigueras": "", "imageUrl": "images/6.jpg" }, "geometry": { "type": "Point", "coordinates": [ -3.72911236725667, 40.371848514650836 ] } },
+{ "type": "Feature", "properties": { "Mes": "Noviembre", "Fecha": "23/11/2021", "Vector": "CUCARACHAS", "RepeInt": "", "Madrigueras": "si", "imageUrl": "images/7.jpg" }, "geometry": { "type": "Point", "coordinates": [ -3.72753006811344, 40.38142550586705 ] } },
+{ "type": "Feature", "properties": { "Mes": "Diciembre", "Fecha": "14/02/2021", "Vector": "RATAS", "RepeInt": "", "Madrigueras": "", "imageUrl": "images/8.jpg" }, "geometry": { "type": "Point", "coordinates": [ -3.74297837786684, 40.375815373405253 ] } },
+{ "type": "Feature", "properties": { "Mes": "Diciembre", "Fecha": "14/12/2021", "Vector": "RATAS", "RepeInt": "", "Madrigueras": "", "imageUrl": "images/9.jpg" }, "geometry": { "type": "Point", "coordinates": [ -3.732478151277759, 40.378401367645964 ] } }
 ]
 }
