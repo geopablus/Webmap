@@ -15,4 +15,6 @@
     overflow-y: auto; /* Desplazamiento si el contenido es largo */
     z-index: 1000; /* Asegura que esté por encima del mapa */
     color: black; /* Color del texto */
+    font-family: 'Roboto', sans-serif; /* Fuente del texto */
+    font-style: italic;
 }

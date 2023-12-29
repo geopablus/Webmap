@@ -22,12 +22,16 @@ function onEachFeature(feature, layer) {
         var content = ''; // Iniciamos el contenido de la barra lateral como una cadena vacía
         if (feature.properties) { // Iterar sobre cada propiedad en el elemento del GeoJSON
             for (var key in feature.properties) {
-                content += '<strong>' + key + ':</strong> ' + feature.properties[key] + '<br>'; // Agregar el nombre del campo y su valor al contenido
+                var value = feature.properties[key] ? feature.properties[key] : '<i>---</i>';
+                content += '<strong>' + key + ':</strong> ' + '<i>' + feature.properties[key] + '</i><br>'; // Agregar el nombre del campo y su valor al contenido
             }
         }
         sidebarContent.innerHTML = content; // Actualizar la barra lateral con el nuevo contenido
     });
 }
+
+
+                content += '<strong>' + key + ':</strong> ' + value + '<br>';
 
 // Ruta al archivo GeoJSON
 var geojsonURL = 'layers/New_csv_puntos.geojson';
