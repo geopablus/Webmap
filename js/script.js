@@ -30,9 +30,6 @@ function onEachFeature(feature, layer) {
     });
 }
 
-
-                content += '<strong>' + key + ':</strong> ' + value + '<br>';
-
 // Ruta al archivo GeoJSON
 var geojsonURL = 'layers/New_csv_puntos.geojson';
 
