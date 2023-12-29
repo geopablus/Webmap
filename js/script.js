@@ -1,4 +1,4 @@
-var map = L.map('map', { pmIgnore: false }, {
+var map = L.map('map', { pmIgnore: true }, {
     fullscreenControl: true,
   fullscreenControlOptions: {
     position: 'topleft'
