@@ -1,4 +1,10 @@
-var map = L.map('map').setView([40.376413, -3.735885], 16); // Creamos el mapa
+var map = L.map('map', {
+    fullscreenControl: true,
+  fullscreenControlOptions: {
+    position: 'topleft'
+  }
+}).setView([40.376413, -3.735885], 16); // Creamos el mapa
+
 var rataIcon = L.icon({
     iconUrl: 'images/rata.png',
     iconSize: [38, 38], // Tamaño del icono, ajusta según sea necesario
@@ -13,8 +19,36 @@ var cucasIcon = L.icon({
     popupAnchor: [-3, -76]
 });
 
-// Cargamos el mapa base
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {maxZoom: 19,attribution: '© OpenStreetMap contributors'}).addTo(map);
+// Definir los mapas base
+var osmLayer = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '© OpenStreetMap contributors'
+});
+
+var satelliteLayer = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+    attribution: 'Tiles © Esri'
+});
+
+// Cargamos en una variable los mapas base
+var baseMaps = {
+    "OpenStreetMap": osmLayer,
+    "Satellite": satelliteLayer
+};
+
+// control cambio mapas base
+osmLayer.addTo(map);
+L.control.layers(baseMaps).addTo(map);
+L.control.scale().addTo(map); // Cargamos la escala
+// Añadir geocodificiones al mapa
+const provider = new GeoSearch.EsriProvider(); // proveedor de geocodificación ESRI
+const searchControl = new GeoSearch.GeoSearchControl({
+    provider: provider,
+    style: 'bar',
+    autoComplete: true, // Opcional: habilita la autocompletación
+    autoCompleteDelay: 250, // Opcional: tiempo de retardo para la autocompletación
+});
+searchControl.addTo(map); // Añadir la barra de búsqueda
+L.control.polylineMeasure(options).addTo(map); // Añadir medición al mapa
 
 function onEachFeature(feature, layer) {
     layer.on('click', function () {
@@ -37,7 +71,15 @@ function onEachFeature(feature, layer) {
         sidebarContent.innerHTML = content; // Actualizar la barra lateral con el nuevo contenido
     });
 }
-
+// Control de medición 
+var measureControl = new L.Control.Measure({
+    position: 'topleft',
+    primaryLengthUnit: 'meters',
+    secondaryLengthUnit: 'kilometers',
+    primaryAreaUnit: 'sqmeters',
+    secondaryAreaUnit: 'acres'
+});
+measureControl.addTo(map);
 
 
 // Ruta al archivo GeoJSON
