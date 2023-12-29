@@ -74,16 +74,6 @@ function onEachFeature(feature, layer) {
         sidebarContent.innerHTML = content; // Actualizar la barra lateral con el nuevo contenido
     });
 }
-// Control de medición 
-var measureControl = new L.Control.Measure({
-    position: 'topleft',
-    primaryLengthUnit: 'meters',
-    secondaryLengthUnit: 'kilometers',
-    primaryAreaUnit: 'sqmeters',
-    secondaryAreaUnit: 'acres'
-});
-measureControl.addTo(map);
-
 
 // Ruta al archivo GeoJSON
 var geojsonURL = 'layers/New_csv_puntos.geojson';
