@@ -1,4 +1,4 @@
-var map = L.map('map', {
+var map = L.map('map', { pmIgnore: false }, {
     fullscreenControl: true,
   fullscreenControlOptions: {
     position: 'topleft'
@@ -32,7 +32,16 @@ var baseMaps = {"OpenStreetMap": osmLayer,"Satellite": satelliteLayer}; // Carga
 // control cambio mapas base
 osmLayer.addTo(map);
 L.control.layers(baseMaps).addTo(map);
-L.control.scale({ position: 'bottomright' }).addTo(map); // Cargamos la escala
+// Cargamos la escala
+L.control.scale({
+    position: 'bottomright',
+    maxWidth: 150,
+    metric: true,
+    imperial: false,
+    updateWhenIdle: true
+}).addTo(map);
+
+
 // Añadir geocodificaciones al mapa
 // const provider = new GeoSearch.EsriProvider(); // proveedor de geocodificación ESRI
 // const searchControl = new GeoSearch.GeoSearchControl({
