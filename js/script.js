@@ -24,22 +24,17 @@ var osmLayer = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
     maxZoom: 19,
     attribution: '© OpenStreetMap contributors'
 });
-
 var satelliteLayer = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
     attribution: 'Tiles © Esri'
 });
-
-// Cargamos en una variable los mapas base
-var baseMaps = {
-    "OpenStreetMap": osmLayer,
-    "Satellite": satelliteLayer
-};
+var baseMaps = {"OpenStreetMap": osmLayer,"Satellite": satelliteLayer}; // Cargamos en una variable los mapas base
 
 // control cambio mapas base
 osmLayer.addTo(map);
 L.control.layers(baseMaps).addTo(map);
 L.control.scale().addTo(map); // Cargamos la escala
 // Añadir geocodificiones al mapa
+const GeoSearch = require('geo-search-library');
 const provider = new GeoSearch.EsriProvider(); // proveedor de geocodificación ESRI
 const searchControl = new GeoSearch.GeoSearchControl({
     provider: provider,
