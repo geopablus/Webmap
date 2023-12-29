@@ -33,8 +33,7 @@ var baseMaps = {"OpenStreetMap": osmLayer,"Satellite": satelliteLayer}; // Carga
 osmLayer.addTo(map);
 L.control.layers(baseMaps).addTo(map);
 L.control.scale().addTo(map); // Cargamos la escala
-// Añadir geocodificiones al mapa
-const GeoSearch = require('geo-search-library');
+// Añadir geocodificaciones al mapa
 const provider = new GeoSearch.EsriProvider(); // proveedor de geocodificación ESRI
 const searchControl = new GeoSearch.GeoSearchControl({
     provider: provider,
