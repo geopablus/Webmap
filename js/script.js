@@ -4,22 +4,14 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {maxZoom: 19,a
 
 function onEachFeature(feature, layer) {
     layer.on('click', function () {
-        // Asumiendo que tienes un div con un ID específico para la barra lateral
-        var sidebarContent = document.getElementById('sidebar');
-
-        // Construir el contenido de la barra lateral basado en las propiedades del GeoJSON
-        var content = '';
-        if (feature.properties) {
-            // Aquí puedes personalizar el contenido basado en las propiedades del GeoJSON
-            content += '<h3>' + feature.properties.Vector + '</h3>'; 
-            content += '<h3>' + feature.properties.Fecha + '</h3>'; 
-            content += '<h3>' + feature.properties.Mes + '</h3>'; 
-            content += '<h3>' + feature.properties.RepeInt + '</h3>'; 
-            content += '<h3>' + feature.properties.Madrigueras + '</h3>';  
+        var sidebarContent = document.getElementById('sidebar'); // Iniciamos la barra lateral
+        var content = ''; // Iniciamos el contenido de la barra lateral como una cadena vacía
+        if (feature.properties) { // Iterar sobre cada propiedad en el elemento del GeoJSON
+            for (var key in feature.properties) {
+                content += '<strong>' + key + ':</strong> ' + feature.properties[key] + '<br>'; // Agregar el nombre del campo y su valor al contenido
+            }
         }
-
-        // Actualizar la barra lateral con el nuevo contenido
-        sidebarContent.innerHTML = content;
+        sidebarContent.innerHTML = content; // Actualizar la barra lateral con el nuevo contenido
     });
 }
 
