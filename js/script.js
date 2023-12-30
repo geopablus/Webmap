@@ -1,3 +1,5 @@
+// Definimos la herramienta de medir
+L.Control.qgsmeasure().addTo(map);
 // Añadir geocodificaciones al mapa
 const provider = new GeoSearch.EsriProvider(); // proveedor de geocodificación ESRI
 const searchControl = new GeoSearch.GeoSearchControl({
@@ -40,5 +42,4 @@ const options = {
     },
 };
 
-// Definimos la herramienta de medir
-L.Control.qgsmeasure().addTo(map);
+
