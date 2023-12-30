@@ -13,7 +13,14 @@ var osmLayer = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
 var satelliteLayer = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
     attribution: 'Tiles © Esri'
 });
-var baseMaps = { "OpenStreetMap": osmLayer, "Satellite": satelliteLayer }; // Cargamos en una variable los mapas base
+
+var googleSatellite = L.tileLayer('https://{s}.google.com/vt/lyrs=s&x={x}&y={y}&z={z}', {
+    maxZoom: 20,
+    subdomains: ['mt1', 'mt2', 'mt3'],
+    attribution: 'Map data © Google Maps'
+});
+
+var baseMaps = { "OpenStreetMap": osmLayer, "Satellite ESRI": satelliteLayer, "Google Satellite": googleSatellite }; // Cargamos en una variable los mapas base
 
 // control cambio mapas base
 osmLayer.addTo(map);
@@ -51,5 +58,12 @@ const options = {
         segments_meters: "m", // Meters label
     },
 };
-
+// Definimos la herramienta de medir
 L.Control.qgsmeasure().addTo(map);
+// Definimos la herramienta de buscar
+const searchControl = new SearchControl({
+    provider: new OpenStreetMapProvider(),
+    style: 'bar',
+  });
+  
+  map.addControl(searchControl);
