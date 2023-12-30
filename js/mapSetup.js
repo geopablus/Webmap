@@ -52,4 +52,4 @@ const options = {
     },
 };
 
-L.Control.qgsmeasure(options).addTo(map);
+L.Control.qgsmeasure().addTo(map);
